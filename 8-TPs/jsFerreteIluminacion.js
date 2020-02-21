@@ -21,6 +21,23 @@ function CalcularPrecio ()
     var importeFinal;
     var IIBB;
 
+
+    var precio = 35;
+
+    switch (cantidad) {
+        case 
+
+
+    }
+
+
+
+
+
+
+
+
+
     cantidad = parseInt(document.getElementById("cantidad").value);
 
     marca = parseInt(document.getElementById("marca").value);
