@@ -10,41 +10,145 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 //con switch e if else.
 
-function CalcularPrecio () 
-{
-    var precio;
+function CalcularPrecio() {
+    var precioUnidad = 35;
+    var precioTotal;
     var cantidad;
     var marca;
-    var porcDescuento;
     var descuento;
     var precioConDescuento;
     var importeFinal;
     var IIBB;
 
+    cantidad = parseInt(document.getElementById("Cantidad").value);
 
-    var precio = 35;
-
-    switch (cantidad) {
-        case 
+    marca = document.getElementById("Marca").value;
 
 
+    if (cantidad >= 6) {
+        precioTotal = precioUnidad * cantidad
+        descuento = precioTotal * 50 / 100
+        precioConDescuento = precioTotal - descuento
+        importeFinal = precioConDescuento
     }
 
+    switch (marca) {
+        case "ArgentinaLuz":
+            if (cantidad == 5) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 40 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 4) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 25 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 3) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 15 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            }
+            break;
+ 
+        case ("FelipeLamparas"):
+            if (cantidad == 5) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 30 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 4) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 25 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 3) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 10 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            }
+            break;
+
+        case "JeLuz":
+            if (cantidad == 5) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 30 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 4) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 20 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 3) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 5 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            }
+            break;
+
+        case "HazIluminacion":
+            if (cantidad == 5) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 30 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 4) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 20 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 3) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 5 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            }
+            break;
+
+        case "Osram":
+            if (cantidad == 5) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 30 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 4) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 20 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            } else if (cantidad == 3) {
+                precioTotal = precioUnidad * cantidad
+                descuento = precioTotal * 5 / 100
+                precioConDescuento = precioTotal - descuento
+                importeFinal = precioConDescuento
+            }
+            break;
+            
+    }
+      
+
+    if (precioConDescuento >= 120) {
+        IIBB = precioConDescuento * 10 /100
+        importeFinal = IIBB + precioConDescuento
+
+        document.getElementById("precioDescuento").value = importeFinal
+        alert("Usted pago 10% mas de IIBB, siendo " + precioConDescuento + " el total SIN el impuesto");
+    } 
 
 
 
 
+    //document.getElementById("precioDescuento").value = precioConDescuento
+    document.getElementById("precioDescuento").value = importeFinal
 
-
-
-
-    cantidad = parseInt(document.getElementById("cantidad").value);
-
-    marca = parseInt(document.getElementById("marca").value);
-    
-
-
-
-
- 	
 }
+
+
+
+ 
+
+
