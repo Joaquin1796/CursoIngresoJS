@@ -24,16 +24,16 @@ function mostrar() {
             numero = parseInt(prompt("Numero invalido. Ingrese un numero (-100 - 100)"));
         }
         letra = prompt("Ingrese una letra");
-        while (!(isNaN(letra))) {
+        while (!((letra >= 'A' && letra <= 'Z') || (letra >= 'a' && letra <= 'z'))) {
             letra = prompt("Eso es una letra. Ingrese una letra");
         }
         if (numero % 2 == 0) {
             acumulaPar++;
 
-        } else if (numero % 2 != 0) {
+        } else {
             acumulaImp++;
         }
-/*
+
         if (numero > 0) {
             acumulaPos = acumulaPos + numero;
             contadorPos++;
@@ -46,37 +46,36 @@ function mostrar() {
             acumulaCeros++;
         }
 
-        if (numero < maximo || flag == 0) {
+        if (numero > maximo || flag == 0) {
             maximo = numero;
             letraMax = letra;
-            flag = 1;
+            
         }
-        if (numero > minimo || flag == 0) {
+        if (numero < minimo || flag == 0) {
             minimo = numero;
             letraMin = letra;
             flag = 1;
         }
-      */  
+        
         seguir = prompt("DESEA CONTINUAR?");
     } while  (seguir == 's');
 
-        
-   promedioPos = acumulador / contadorPos;
+   if ( contadorPos != 0 )  {    
+   promedioPos = acumulaPos / contadorPos;
+   }
 
 
-alert("A-- "+acumulaPar+" B-- "+acumulaImp+" C-- "+acumulaCeros+" D-- "+promedioPos+" E-- "+acumulaNeg);
 
+   document.write("a) La cantidad de números pares. " + acumulaPar + "<br/>");
+   document.write("b) La cantidad de números impares. " + acumulaImp + "<br/>");
+   document.write("c) La cantidad de ceros. " + acumulaCeros + " <br/>");
+   document.write("d) El promedio de todos los números positivos ingresados. " + promedioPos + "<br/>");
+   document.write("e) La suma de todos los números negativos. " + acumulaNeg + "<br/>");
+   document.write("f) El número máximo y su letra. " + maximo + " y " + letraMax + "<br/>" );
+   document.write("f) El número minimo y su letra. " + minimo + " y " + letraMin);
 
-/*
-    alert("a) La cantidad de números pares. " + acumulaPar + "<br/>" +
-        " b) La cantidad de números impares. " + acumulaImp + "<br/>" +
-        " c) La cantidad de ceros. " + acumulaCeros + " <br/>" +
-        " d) El promedio de todos los números positivos ingresados. " + promedioPos + "<br/>" +
-        " e) La suma de todos los números negativos. " + acumulaNeg + "<br/>" +
-        " f) El número y la letra del máximo y el mínimo. " + maximo + "y" + letraMax + "  " + minimo + " y " + letraMin);
-*/
 }
 
 
 
-
+//while (!(isNaN(letra)))
